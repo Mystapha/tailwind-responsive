@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./wind.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>tailwind-test</title>
+</head>
+<body class="bg-blue-500">
+  <!-- navbar -->
+    <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-20 w-30" src="./ba1.png" alt="Your Company">
+              </div>
+              <div class="hidden sm:ml-6 sm:block mt-5">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                </svg>
+              </button>
+
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-15 rounded-full" src="./Mustapha-remov.png" alt="">
+                  </button>
+                </div>
+
+                <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+          </div>
+        </div>
+    </nav>
+    <!-- title -->
+    <div class="text-center mt-[3rem] font-bold">
+      <h2 class="text-3xl text-red-300 font-sans hover:font-serif underline">FULL stack JS Developer </h2>
+      <!-- Card -->
+<div class="max-w-md w-full lg:flex mt-[5rem] ml-[29rem] w-80 rounded-lg">
+  <div class="h-48  lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/354475390/original/1a4c011d7fae313fd4fe9364b7cf0991e16a0293/be-your-full-stack-developer-in-react-angular-php-nodejs-mysql-next-js.png')" title="Woman holding a mug">
+  </div>
+  <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="mb-8">
+      <p class="text-sm text-grey-dark flex items-center">
+        <svg class="text-grey w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+        </svg>
+        Members only
+      </p>
+      <div class="text-black font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+      <p class="text-grey-darker text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+    </div>
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg" alt="Avatar of Jonathan Reinink">
+      <div class="text-sm">
+        <p class="text-black leading-none">Jonathan Reinink</p>
+        <p class="text-grey-dark">Aug 18</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+
+</div>
+    </div>
+<!-- section1 -->
+<!-- <div class="p-52 mt-[-7rem] items-center  text-center "> -->
+        <div class=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  m-[5rem] space-x-12 w-[100%]">
+          <div class="max-w-sm w-[14rem] bg-white border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <a href="#">
+                  <img class="rounded-t-lg" src="https://www.multirecruit.com/wp-content/uploads/2022/05/What-is-Full-Stack-Developer.png" alt="" />
+              </a>
+              <div class="p-5">
+                  <a href="#">
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">FULL STACK JS DEVELOPER 2024</h5>
+                  </a>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">A full stack JavaScript developer is a person who can develop both client and server software.</p>
+                  <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Read more
+                       <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+          <div class="max-w-sm w-[14rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="data:image/png;base64,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" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">NOUVELLE TECHNOLOGIE 2024</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> nouvelles technologies émergentes pour élever et simplifier complètement le processus de développement. ..</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-sm  w-[14rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+              <img class="rounded-t-lg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKN6yfjeDHcRUclAT1VrWYgi8G8acnI1fi0nr63IpdbxB4EWPGDSc7IPoQ_KaZQXqn-H0&usqp=CAU" alt="" />
+          </a>
+          <div class="p-5">
+              <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Our Project 2024</h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> nouvelles technologies émergentes pour élever et simplifier complètement le processus de développement. ..</p>
+              <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Read more
+                   <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+          </div>
+      </div>
+<!-- </div> -->
+
+    </div>
+  
+
+<br><br><br>
+<!-- footer -->
+    <footer class="bg-gray-800 rounded-lg shadow m-0 dark:bg-gray-900 mt-6 w-[84rem]">
+      <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+      </span>
+      <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+          <li>
+              <a href="#" class="hover:underline me-4 md:me-6"><img class="w-[2rem] ml-[1rem]" src="./icons8-twitter.gif" alt=""></a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline me-4 md:me-6"><img class="w-[2rem] ml-[1rem]" src="./facebook.png" alt=""></a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline me-4 md:me-6"><img class="w-[2rem] ml-[1rem]" src="./svg.png" alt=""></a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline"><img class="w-[2rem] ml-[1rem] mt-[-1rem]" src="./utilisateur.png" alt=""></a>
+          </li>
+      </ul>
+      </div>
+  </footer>
+
+  
+    </body>
+</html>
